@@ -1,0 +1,24 @@
+<div class="article">
+  <section class="books">
+    <div class="book" *ngFor="let book of books">
+      <div class="image-container" appZoom="zoom">
+        <img src="{{book.image}}" alt="{{book.name}}">
+      </div>
+      <div class="info-container">
+        <h3>{{book.name}}</h3>
+        <p>{{book.author}}</p>
+        <p>{{book.shortDescription}}</p>
+        <p class="price">{{book.price | formatToCurrency}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="dummy-text" *appIf="isClicked">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab ad animi assumenda consectetur consequuntur
+      distinctio dolorem ducimus enim eos ex facere itaque modi neque nobis, non quis quod recusandae?
+    </div>
+
+    <button type="button" (click)="openDetails()">{{buttonText}}</button>
+  </section>
+</div>
